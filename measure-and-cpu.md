@@ -4,7 +4,7 @@
 
 Learn about the fields and aggregate values Nexthink uses to measure memory usage and processing power. With these values, you can determine how much memory is allocated to a particular device and which applications consume the most resources.
 
-To assess both devices' efficiency and resource consumption's impact on employee experience, your organization must measure the use of hardware resources on each device. When devices are perceived as slow, it is often due to scarcity or misuse of two fundamental system resources: main memory and [CPU](## "Central Processing unit").
+To assess both devices' efficiency and resource consumption's impact on employee experience, your organization must measure the use of hardware resources on each device. When devices are perceived as slow, it is often due to scarcity or misuse of two fundamental system resources: main memory and CPU.
 
 ## Platform
 
@@ -38,13 +38,13 @@ The table below lists the fields and aggregates available to measure memory usag
 
 [Collector](## "Nexthink Collector is a lightweight software agent designed to gather hardware and software information, monitor system activity, engage with employees for feedback surveys, and act on the device when instructed.") takes samples of the CPU load of all running processes every 1 minute, with 2 samples taken within each 30-second interval. This data is then aggregated into 5-minute intervals by the aggregation service and further aggregated into 15-minute time buckets.
 
-For execution events, [CPU](## "Central Processing unit") time is reported every 5 minutes after a process is created, with 10 samples taken within each 30-second interval. Collector sends the [CPU](## "Central Processing unit") samples to [Engine](## "Nexthink Engine is a server-side application developed for the Nexthink V6 platform, the on-premises Nexhtink solution.") every 5 minutes.
+For execution events, CPU time is reported every 5 minutes after a process is created, with 10 samples taken within each 30-second interval. Collector sends the CPU samples to [Engine](## "Nexthink Engine is a server-side application developed for the Nexthink V6 platform, the on-premises Nexhtink solution.") every 5 minutes.
 
 <br>
 
 > ### :information_source: Note
 >
-> Since the data is collected at different intervals and processes may terminate during the monitoring period, there may be an overlap between [CPU](## "Central Processing unit") blocks and execution events. 
+> Since the data is collected at different intervals and processes may terminate during the monitoring period, there may be an overlap between CPU blocks and execution events. 
 > 
 > Therefore, the last reported information on process termination may only reflect the first 0-5 minutes of the process. <br>
 
@@ -54,8 +54,8 @@ The table below lists the fields and aggregates available to measure memory usag
 
 |Name      | Type | Applies     |Description    |
 | :---        |    :---   |  :--- | :---|
-| Total [CPU](## "Central Processing unit") time | field | execution | The effective utilization time of the [CPU](## "Central Processing unit") during the aggregated execution. Note that the total CPU time can exceed the total duration of the execution if the average [CPU](## "Central Processing unit") load is over 100%.|
-| Total [CPU](## "Central Processing unit") time | aggregate |  user <br>  device <br>  application <br> executable <br> binary | The sum of the total CPU time of the within the scope of the selected object. |
+| Total CPU time | field | execution | The effective utilization time of the CPU during the aggregated execution. Note that the total CPU time can exceed the total duration of the execution if the average CPU load is over 100%.|
+| Total CPU time | aggregate |  user <br>  device <br>  application <br> executable <br> binary | The sum of the total CPU time within the scope of the selected object. |
 | CPU usage | field | device | The average memory usage of the underlying execution with a sampling rate of 5 minutes. |
 | CPU usage | aggregate | user <br> device <br> application <br> binary | The sum of the total CPU time of the user/device/application/executable/binary divided by their duration. |
 | Normalised CPU usage | aggregate | user <br> device <br> application <br> binary | The sum of the total CPU time of the user/device/application/executable/binary divided by their duration and number of logical processors. |
